@@ -1,13 +1,10 @@
 import clsx from "clsx"
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
-import { Ellipsis, UserPlus, Users } from "lucide-react"
+import { Ellipsis } from "lucide-react"
 import { useState } from "react"
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
 import { Input } from "~/components/ui/input"
-import {
-  Dialog,
-  DialogTrigger,
-} from "~/components/ui/dialog"
 import AddFriend from "./dialogAddFriend"
+import CreateGroud from "./dialogCreateGroud"
 
 function SideBar() {
   const [isActive, setIsActive] = useState<string>('conversationAll')
@@ -24,17 +21,8 @@ function SideBar() {
         <div className="flex items-center px-4 mt-4">
           <Input className="w-[220px] bg-[#EBECF0]" type="text" placeholder="Tìm kiếm" />
           <div className="flex gap-4 ml-4">
-            <Dialog>
-              <DialogTrigger>
-                <div className="w-8 h-8 hover:bg-[#E5E7EB] rounded-[3px] flex-item-justify-center">
-                  <Users className="cursor-pointer" size={20} strokeWidth={1.5} />
-                </div>
-              </DialogTrigger>
-              <AddFriend />
-            </Dialog>
-            <div className="w-8 h-8 hover:bg-[#E5E7EB] rounded-[3px] flex-item-justify-center">
-              <UserPlus size={20} strokeWidth={1.5} />
-            </div>
+            <AddFriend />
+            <CreateGroud />
           </div>
         </div>
         <div className="flex justify-between px-4">
